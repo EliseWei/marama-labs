@@ -1,35 +1,9 @@
-# Boilerplate: Fullstack with Sass
+# The Objectives 🥅
 
-## Setup
+## Primary objective
 
-### What's included
+Find below some data we want to display in the browser (data.js). Create a WebApp that displays the data below in a reusable tree component that allows for browsing the data structure and opening and closing the navigation nodes. We later want to use it throughout the application and might ask you for more functionality if there is time. Find your personal right balance between quality and functionality. Feel free to make it prettier and improve the design and user experience.
 
-This repo includes:
+## Secondary objective
 
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Vitest and testing library
-* configuration for server-side debugging in VS Code
-* configuration for preprocessing Sass
-
-### Installation
-
-#### **From the Github UI**
-
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
-
-#### **From the command line**
-
-```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack-query [your-project-name]
-cd [your-project-name]
-npm install # to install dependencies
-npm run dev # to start the dev server
-```
-
-You can find the server running on [http://localhost:3000](http://localhost:3000) and the client running on [http://localhost:5173](http://localhost:5173).
-
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-fullstack-query)
+If you have the time, set up a simple backend that allows the Webapp to pull this data via http from a backend. Ideally pull the data into the WebApp so it works and renders as it did with the mock before. Consider that this is the seed of our whole cloud infrastructure and find the right trade-off between simplicity and extensibility.
