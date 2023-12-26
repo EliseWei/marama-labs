@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="app">
-      <List itemsArr={dataArray} />
+      <List itemsArr={dataArray} isOpen={true} />
     </div>
   )
 }
