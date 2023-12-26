@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
-import { fetchData } from '../data'
-import { DataItem } from '../../models/data'
+import { getData } from '../apis/data'
 import { List } from './List'
+import { useQuery } from '@tanstack/react-query'
 
 function App() {
-  const [dataArray, setDataArray] = useState([] as DataItem[])
-  useEffect(() => {
-    async function getData() {
-      const data = await fetchData()
-      setDataArray(data)
-    }
-    getData()
-  }, [])
+  const {
+    data: dataArray,
+    isError,
+    isLoading,
+  } = useQuery({ queryKey: ['dataList'], queryFn: getData })
+
+  if (!dataArray && isLoading) return <p>Loading...</p>
+
+  if (isError) return <p>Oops! Something went wrong.</p>
 
   return (
     <div className="app">

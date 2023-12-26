@@ -1,4 +1,4 @@
-const backendData = [
+export const backendData = [
   {
     id: '1',
     name: 'Office Map',
