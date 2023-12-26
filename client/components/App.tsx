@@ -1,15 +1,22 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { useEffect, useState } from 'react'
+import { fetchData } from '../data'
+import { DataItem } from '../../models/data'
+import { List } from './List'
 
 function App() {
-  const { data } = useFruits()
+  const [dataArray, setDataArray] = useState([] as DataItem[])
+  useEffect(() => {
+    async function getData() {
+      const data = await fetchData()
+      setDataArray(data)
+    }
+    getData()
+  }, [])
 
   return (
-    <>
-      <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
-      </div>
-    </>
+    <div className="app">
+      <List itemsArr={dataArray} />
+    </div>
   )
 }
 

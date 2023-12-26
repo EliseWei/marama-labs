@@ -2,5 +2,58 @@
 
 html, 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 100%;
+  padding: 3px 5px 3px 0px;
+  &:focus {
+    background-color: lightpink;
+    border-radius: 3px;
+    outline: none;
+    text-decoration: underline;
+  }
+}
+
+ul {
+  padding-left: 1em;
+  overflow: hidden;
+}
+
+li {
+  line-height: 1.5;
+  list-style: none;
+  > span::before, > button::before {
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+  }
+  > span::before {
+    content: "\002022";
+  }
+  > button::before {
+    content: "\0025B8";
+    transition: transform .3s ease-out;
+  }
+  &.closed {
+    > ul {
+      max-height: 0px;
+      transition: max-height .6s ease-out;
+    }
+  }
+  &.open {
+    > button::before {
+      transform: rotate(90deg);
+    }
+    > ul {
+      max-height: 160px;
+      transition: max-height .6s ease-out;
+    }
+  }
 }
