@@ -1,6 +1,9 @@
 import { getData } from '../apis/data'
 import { List } from './List'
 import { useQuery } from '@tanstack/react-query'
+import {ToggleButton} from './ToggleButton'
+import { OpenContext } from '../openContext'
+import { useState } from 'react'
 
 function App() {
   const {
@@ -8,6 +11,7 @@ function App() {
     isError,
     isLoading,
   } = useQuery({ queryKey: ['dataList'], queryFn: getData })
+  const [allOpen, setAllOpen] = useState(false);
 
   if (!dataArray && isLoading) return <p>Loading...</p>
 
@@ -15,7 +19,10 @@ function App() {
 
   return (
     <div className="app">
-      <List itemsArr={dataArray} isOpen={true} />
+      <ToggleButton setAllOpen={setAllOpen} allOpen={allOpen}/>
+      <OpenContext.Provider value={allOpen}>
+        <List itemsArr={dataArray} isOpen={true} />
+      </OpenContext.Provider>
     </div>
   )
 }

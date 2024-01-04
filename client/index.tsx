@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import App from './components/App.tsx'
+import { OpenContext } from './openContext.tsx'
 
 const queryClient = new QueryClient()
 
