@@ -5,7 +5,7 @@ interface Props {
   itemsArr: DataItem[]
   isOpen: boolean
 }
-export function List({itemsArr, isOpen}: Props) {
+export function List({ itemsArr, isOpen }: Props) {
   return (
     <ul aria-hidden={!isOpen}>
       {itemsArr &&

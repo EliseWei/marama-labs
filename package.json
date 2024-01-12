@@ -16,7 +16,8 @@
     "build": "run-s build:client build:server",
     "build:client": "vite build",
     "build:server": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.ts",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "knex": "knex --knexfile server/db/knexfile.js"
   },
   "eslintConfig": {
     "extends": "@devacademy/eslint-config/react",
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
+    "knex": "^3.1.0",
     "superagent": "7.1.1"
   },
   "devDependencies": {
@@ -57,6 +59,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "sass": "^1.50.1",
+    "sqlite3": "^5.1.6",
     "supertest": "^6.2.2",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6",

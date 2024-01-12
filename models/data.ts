@@ -3,3 +3,9 @@ export interface DataItem {
   name: string
   children?: DataItem[]
 }
+
+export interface DataItemDb {
+  id: string
+  name: string
+  parentId?: string
+}
